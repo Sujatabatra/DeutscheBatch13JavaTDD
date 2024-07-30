@@ -1,0 +1,13 @@
+create table shares(
+shareId number(5) primary key,
+shareName varchar2(35),
+marketPrice number(10,2));
+
+insert into shares values(1,'Dabur',650);
+insert into shares values(2,'PVR',1450);
+insert into shares values(3,'ICICI',1250);
+insert into shares values(4,'HDFC',1650);
+
+select * from shares;
+
+desc shares;
