@@ -1,0 +1,7 @@
+1. create spring boot project : select dependency for oracle driver and Spring Data JPA
+2. add properties in application.properties
+3. create entity and map it with table in db
+4. create dao layer by extending interface with jpa repository
+5. create service layer
+6. create presentation layer
+7. create client
