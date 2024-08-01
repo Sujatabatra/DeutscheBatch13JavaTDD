@@ -25,4 +25,37 @@ public class ShareServiceImpl implements ShareService {
 		return shareDao.findById(shareId);
 	}
 
+	@Override
+	public Share deleteShareById(Integer shareId) {
+		Optional<Share> optionalShare=getShareById(shareId);
+		Share share=null;
+		if(optionalShare.isPresent()) {
+			share=optionalShare.get();
+			shareDao.deleteById(share.getShareId());
+		}
+		return share;
+	}
+
+	@Override
+	public Share updateMarketPrice(Integer shareId, Double marketPrice) {
+		Optional<Share> optionalShare=getShareById(shareId);
+		Share share=null;
+		if(optionalShare.isPresent()) {
+			share=optionalShare.get();
+			share.setPrice(marketPrice);
+			shareDao.save(share);   //.save() : save and update
+		}
+		return share;
+	}
+
+	@Override
+	public Share insertNewShare(Share share) {
+		Optional<Share> optionalShare=getShareById(share.getShareId());
+		Share sh=null;
+		if(!(optionalShare.isPresent())){
+			sh=shareDao.save(share);
+		}
+		return sh;
+	}
+
 }

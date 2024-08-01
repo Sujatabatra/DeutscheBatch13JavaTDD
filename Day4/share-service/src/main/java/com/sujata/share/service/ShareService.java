@@ -9,4 +9,7 @@ public interface ShareService {
 
 	List<Share> getAllShares();
 	Optional<Share> getShareById(int shareId);
+	Share deleteShareById(Integer shareId);
+	Share updateMarketPrice(Integer shareId,Double marketPrice);
+	Share insertNewShare(Share share);
 }
